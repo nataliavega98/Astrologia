@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+/*font-family: 'Roboto Mono', monospace;*/
+/*<a href="https://www.flaticon.es/iconos-gratis/aries" title="aries iconos">Aries iconos creados por Freepik - Flaticon</a>*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+	background-image: url('assets/back.jpg');
+    object-fit: cover;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 56px 24px;
+
+    gap: 24px;
+}
+
+.datos-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 56px;
+
+    max-width: 600px;
+
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.datos-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.datos-form div{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.datos-form input {
+    background-color: rgba(255, 255, 255, 0);
+    height: 32px;
+    border-radius: 6px;
+    padding-left: 8px;
+    outline: none;
+    border: solid 1px white;
+    color: white;
+}
+
+.datos-form input::placeholder {
+    color: white;
+    
+}
+.datos-form input:hover {
+    background-color: rgba(255, 255, 255, 0.247);
+
+}
+.datos-form input:focus {
+    background-color: rgba(255, 255, 255, 0.247);
+    border: none;
+    border: solid 2px #a582ca;
+
+}
+.datos-form button {
+    background-color: #a582ca;
+    height: 32px;
+    border-radius: 6px;
+    padding-left: 8px;
+    border: none;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 1000;
+    font-size: 16px;
+    
+}
+.datos-form button:hover {
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.507);
+    cursor: pointer;
+}
+.datos-form button:active{
+    background-color: #a582ca7e;
+
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.507);
+    cursor: pointer;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.164);
+    backdrop-filter: blur(10px);
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 16px;
+    max-width: 600px;
+}
+
+.card img {
+    width: 60%;
+}
+
+.card img, .card h3 {
+    align-self: center;
+    font-size: 24px
+}
+
+.text-item {
+    font-size: 18px;
+    
+    display: flex;
+    gap: 8px;
+    
+}
+.exception{
+    flex-direction: column;
+    
+}
+
+.error > small{
+    font-size: 16px;
+    color: rgb(255, 111, 111);
+}
+.error > input:focus, .error > input {
+    
+    border: 1px solid rgb(255, 111, 111);
+}
+.success > input:focus, .success > input{
+    border: green 1px solid;
+}
