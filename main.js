@@ -104,50 +104,61 @@ const checkDate = () => {
 
         
     })
-    console.log(signoEncontrado)
-    createCard(signoEncontrado);
-    return valid;
-
+    
+    
+    const resultadoSigno = {signo: signoEncontrado, valido: valid};
+    
+    return resultadoSigno;
 
 }
+/*
+function guardarDatosSigno (checkDate){
+    
+}
+*/
 
 const createCard = (card) => {
 
     //const {id, sign, imagen, fecha, elemento, estacion, planeta, caracteristicas, famosos} = card;
     
-    console.log(card)  
     const cardHtml = `<div class="card" id="${card.id}">
     
-    <h3 id="name">${card.sign}</h3>
-    <img src="assets/${card.imagen}" alt="${card.sign}">
-    <h4 id="fecha">${card.fecha}</h4>
-    <div class="text-item">
-        <h4>Elemento principal:</h4><p>${card.elemento}</p>
-    </div>
-    <div class="text-item">
-        <h4>Naturaleza estacional:</h4><p>${card.estacion}</p>
-    </div>
-    <div class="text-item">
-        <h4>Planeta regente:</h4><p>${card.planeta}</p>
-    </div>
-    <div class="text-item exception">
-        <h4>Características:</h4>
-        <p>${card.caracteristicas}</p>                
-    </div>
-    <div class="text-item">
-        <h4>Famosos con tu signo:</h4>
-        <p>${card.famosos}</p>
-    </div>
-</div>`
-console.log(cardHtml)
-renderSigno(cardHtml);
+        <h3 id="name">${card.sign}</h3>
+        <img src="assets/${card.imagen}" alt="${card.sign}">
+        <h4 id="fecha">${card.fecha}</h4>
+        <div class="text-item">
+            <h4>Elemento principal:</h4><p>${card.elemento}</p>
+        </div>
+        <div class="text-item">
+            <h4>Naturaleza estacional:</h4><p>${card.estacion}</p>
+        </div>
+        <div class="text-item">
+            <h4>Planeta regente:</h4><p>${card.planeta}</p>
+        </div>
+        <div class="text-item exception">
+            <h4>Características:</h4>
+            <p>${card.caracteristicas}</p>                
+        </div>
+        <div class="text-item">
+            <h4>Famosos con tu signo:</h4>
+            <p>${card.famosos}</p>
+        </div>
+    </div>`
 }
+
 
 
 const renderSigno = (textoHtml) => {
     cardSigno.innerHTML= textoHtml;
 
-    console.log(textoHtml)
+    
+        if(isValidForm()){
+            return renderSigno(checkDate().signo)
+        }
+        else{
+            return console.log(error)
+        }
+    
 }
 
 
@@ -316,19 +327,18 @@ const signos = [aries, tauro, geminis, cancer, leo, virgo, libra, escorpio, sagi
 
 //renderizar
 const isValidForm = () => {
-    const isValidName = checkUsername(usernameForm);
-    const isValidEmail = checkEmail(emailForm);
-    const isValidDate = checkDate(dateForm);
-    
-    return isValidDate && isValidDate && isValidEmail
+    console.log(checkDate().valido && checkEmail() && checkUsername());
+
+    if(checkDate().valido && checkEmail() && checkUsername()) {
+        return true;
+    }
+    else {return false}
 }
 
 const init = () => {
     form.addEventListener("submit", (e) => {
         e.preventDefault(); //hacerlo siempre
-        checkUsername();
-        checkEmail();
-        checkDate();
+        isValidForm();
     })
 
 }
